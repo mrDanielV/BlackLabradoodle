@@ -1,3 +1,10 @@
+:root {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-gold: #d4af37;
+  --color-surface: #1a1a1a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +13,26 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .content {
-  padding: 32px;
+  padding: 32px 10%;
+}
+
+.title {
+  font-family: 'Inter';
+  color: var(--color-gold);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 32px;
+  }
 }

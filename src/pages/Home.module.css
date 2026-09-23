@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.image {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+.text {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .image {
+    align-self: center;
+    width: 100%;
+  }
+}

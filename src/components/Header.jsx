@@ -30,14 +30,10 @@ export function Header() {
 
       <nav className={styles.nav}>
         {navItems.map(({ to, label, end }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={end}
-            className={({ isActive }) =>
-              isActive ? `${styles.link} ${styles.active}` : styles.link
-            }
-          >
+          <NavLink key={to} to={to} end={end} className={
+              //({ isActive }) => isActive ? `${styles.link} ${styles.active}` : styles.link
+              ({ isActive }) => isActive ? styles.link + ' ' + styles.active : styles.link
+            }>
             {label}
           </NavLink>
         ))}
