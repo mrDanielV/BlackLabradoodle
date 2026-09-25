@@ -2,16 +2,16 @@ import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const navItems = [
-  { to: '/', label: 'Главная', end: true },
-  { to: '/members', label: 'Состав' },
-  { to: '/music', label: 'Музыка' },
-  { to: '/contacts', label: 'Контакты' },
+  { to: '/', label: 'About Bl-Lab', end: true },
+  { to: '/members', label: 'Team band' },
+  { to: '/music', label: 'Music' },
+  { to: '/contacts', label: 'Contracts' },
 ];
 
 export function Header() {
   return (
     <header className={styles.header}>
-      <NavLink to="/" className={styles.logo} aria-label="На главную">
+      <NavLink to="/" className={styles.logo} aria-label="Home">
         <svg
           width="28"
           height="28"
@@ -28,6 +28,24 @@ export function Header() {
         </svg>
       </NavLink>
 
+      <button type="button" className={`${styles.menuMobile} ${styles.logo}`}>
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+
       <nav className={styles.nav}>
         {navItems.map(({ to, label, end }) => (
           <NavLink key={to} to={to} end={end} className={
@@ -38,6 +56,10 @@ export function Header() {
           </NavLink>
         ))}
       </nav>
+
+      
+
+      
     </header>
   );
 }

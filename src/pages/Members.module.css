@@ -1,0 +1,102 @@
+.member {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.memberImage {
+  flex-shrink: 0;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.memberInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.memberName {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  color: var(--color-gold);
+}
+
+.memberRoleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.memberRole {
+  font-style: italic;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.memberToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-gold);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.memberToggle:hover,
+.memberToggle:focus-visible {
+  color: var(--color-text);
+}
+
+.memberText {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .member {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* Порядок: заголовок → аннотация → картинка */
+  .memberImage {
+    order: 3;
+    width: 100%;
+  }
+
+  .memberInfo {
+    display: contents; /* снимаем обёртку, чтобы order работал по элементам */
+  }
+
+  .memberName {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  .memberRoleRow {
+    order: 2;
+    margin-bottom: 0;
+  }
+
+  /* Текст скрыт, показывается только по клику */
+  .memberText {
+    order: 4;
+    display: none;
+  }
+
+  .memberText.open {
+    display: block;
+  }
+
+  .memberToggle {
+    display: inline-block;
+  }
+}

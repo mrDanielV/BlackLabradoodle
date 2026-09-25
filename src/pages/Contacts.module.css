@@ -1,14 +1,3 @@
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 16px 24px;
-  background-color: var(--color-surface);
-  color: var(--color-text);
-  border-bottom: 2px solid var(--color-text);
-}
-
 .logo {
   display: inline-flex;
   align-items: center;
@@ -21,20 +10,6 @@
 .logo:hover,
 .logo:focus-visible {
   color: var(--color-gold);
-}
-
-.menuMobile {
-  color: var(--color-text);
-  background: var(--color-surface);
-  border: none;
-  cursor: pointer;
-  display: none;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
 }
 
 .link {
@@ -63,19 +38,3 @@
   color: var(--color-gold);
 }
 
-.active {
-  color: var(--color-gold);
-}
-
-.active::after {
-  background-color: var(--color-gold);
-}
-
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-  .menuMobile {
-    display: block;
-  }
-}

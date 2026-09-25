@@ -1,0 +1,30 @@
+.album {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.albumImage {
+  flex-shrink: 0;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.albumInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.albumName {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+  color: var(--color-gold);
+}
+
+.albumList {
+    padding: 5px;
+    padding-left: 10px;
+}
