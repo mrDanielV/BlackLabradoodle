@@ -1,0 +1,60 @@
+.menuCnt {
+  position: fixed;
+  top: var(--header-h, 65px);   /* старт под верхней панелью */
+  right: 0;                     /* привязка к правому краю */
+  width: 90%;                 /* «слайд-блок», не на всю ширину */
+  max-width: 85vw;
+  height: calc(100vh - var(--header-h, 65px)); /* до низа экрана */
+  background-color: #2e2716;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 100;
+
+  /* выезд справа налево (из-за правого края) */
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  /* объём: тень по «высоте» слева */
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.45);
+
+  border-radius: 12px 0 0 12px;  /* «парящий» левый край */
+}
+
+.menuCnt.open {
+  transform: translateX(0);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 90;
+}
+
+.listCnt {
+  clear: both;
+  margin-top: 20px;
+}
+
+.linkM {
+  display: block;
+  padding: 12px;
+  margin-bottom: 5px;
+  color: var(--color-litegray);
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 32px;
+  font-family: 'Inter';
+}
+.linkM:hover {
+  color: var(--color-gold);
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+}
+.close:hover {
+  color: var(--color-gold);
+}

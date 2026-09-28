@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import styles from './Header.module.css';
+
+import { MenuM } from './MenuM';
 
 const navItems = [
   { to: '/', label: 'About Bl-Lab', end: true },
@@ -9,6 +12,8 @@ const navItems = [
 ];
 
 export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo} aria-label="Home">
@@ -28,7 +33,7 @@ export function Header() {
         </svg>
       </NavLink>
 
-      <button type="button" className={`${styles.menuMobile} ${styles.logo}`}>
+      <button type="button" className={`${styles.menuMobile} ${styles.logo}`} onClick={() => setIsOpen((v) => !v)}>
         <svg
           width="28"
           height="28"
@@ -45,6 +50,8 @@ export function Header() {
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
+
+      <MenuM isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
       <nav className={styles.nav}>
         {navItems.map(({ to, label, end }) => (
