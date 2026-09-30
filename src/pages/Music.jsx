@@ -1,14 +1,31 @@
 //import { useState } from 'react';
 import liteSmile from '../../images/liteSmile.jpg';
-import styles from './Music.module.css';
+import darkAngel from '../../images/darkAngel.jpg';
+import { Album } from '../components/Album';
+//import styles from './Music.module.css';
 
 const liteSmileTracks = [
   {name: 'Lite Smile'},
   {name: 'Sarcasm'},
-  {name: ' Autumn rondo'},
+  {name: 'Autumn rondo'},
   {name: 'Just Summer'},
   {name: "Winter's Grin"},
-  {name: 'Hallelujah'}
+  {name: 'Hallelujah'},
+  {name: 'Romance Anonimo'},
+  {name: 'The House of The Rising Sun'}
+];
+
+const darkAngelTracks = [
+  {name: 'Dark Angel'}
+];
+
+const albums = [
+  {album: {
+    name: 'Lite Smile', img: liteSmile, tracks: liteSmileTracks
+  }},
+  {album: {
+    name: 'Dark Angel (single)', img: darkAngel, tracks: darkAngelTracks
+  }}
 ];
 
 export function Music() {
@@ -16,7 +33,11 @@ export function Music() {
     <div>
       <h1 className="title">Music</h1>
 
-      <div className={styles.album}>
+      {albums.map(({album}) => (
+        <Album data={album}></Album>
+      ))}
+
+      { /*<div className={styles.album}>
         <img src={liteSmile} alt="Lite Smile" className={styles.albumImage} />
 
         <div className={styles.albumInfo}>
@@ -27,7 +48,7 @@ export function Music() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

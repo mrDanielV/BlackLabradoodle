@@ -33,7 +33,8 @@ export function Header() {
         </svg>
       </NavLink>
 
-      <button type="button" className={`${styles.menuMobile} ${styles.logo}`} onClick={() => setIsOpen((v) => !v)}>
+      <button type="button" className={`${styles.menuMobile} ${styles.logo}`}
+        onClick={() => setIsOpen((v) => !v)}>
         <svg
           width="28"
           height="28"

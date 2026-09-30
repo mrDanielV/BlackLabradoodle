@@ -11,10 +11,11 @@ const navItems = [
 
 export function MenuM({ isOpen, onClose }) {
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
       document.body.style.overflow = '';
-    };
+    }
   }, [isOpen]);
 
   return (
