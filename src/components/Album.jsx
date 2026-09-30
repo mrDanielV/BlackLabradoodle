@@ -1,27 +1,50 @@
 import styles from './Album.module.css';
 
-export function Album({data}) {
-    console.log(data);
-
-    //return (<div>11</div>);
-
-
-    return (
+export function Album({ data }) {
+  return (
         <div className={styles.album}>
-            <img src={data.img} alt="Lite Smile" className={styles.albumImage} />
-
             <div className={styles.albumInfo}>
-                <h2 className={styles.albumName}>{data.name}</h2>
-                <div className={styles.albumList}>
-                {data.tracks.map(({ name }) => (
-                    <p>&bull; {name}</p>
-                ))}
+                <img src={data.img} alt={styles.albumName} className={styles.albumImage} />
+                <div className={styles.albumBody}>
+                    <h2 className={styles.albumName}>{data.name}</h2>
+
+                    <div className={styles.albumList}>
+                        {data.tracks.map(({ name }) => (
+                            <p key={name}>&bull; {name}</p>
+                        ))}
+                        </div>
+
+                    <div className={styles.links}>
+                        <a
+                            href="https://open.spotify.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Слушать на Spotify"
+                            className={styles.linkBadge}
+                        >
+                            <img
+                                src="/spotify1.png"
+                                alt="Spotify"
+                                className={styles.badgeImage}
+                            />
+                        </a>
+
+                        <a
+                            href="https://music.yandex.ru/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Слушать в Яндекс.Музыке"
+                            className={styles.linkBadge}
+                        >
+                            <img
+                                src="/yandex1.png"
+                                alt="Яндекс.Музыка"
+                                className={styles.badgeImage}
+                            />
+                        </a>
+                    </div>
                 </div>
-
-                <div className={styles.links}>Links</div>
             </div>
-
-            
         </div>
     );
 }

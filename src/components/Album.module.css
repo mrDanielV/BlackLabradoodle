@@ -1,8 +1,27 @@
 .album {
+  margin-bottom: 32px;
+}
+
+.album:not(:last-child)::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin: 32px auto 0;
+  width: 80%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold, #d4af37),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* на десктопе: картинка слева, контент справа */
+.albumInfo {
   display: flex;
   align-items: flex-start;
   gap: 24px;
-  margin-bottom: 24px;
 }
 
 .albumImage {
@@ -15,7 +34,7 @@
   border: 1px solid #222;
 }
 
-.albumInfo {
+.albumBody {
   flex: 1;
   min-width: 0;
 }
@@ -33,12 +52,64 @@
 }
 
 .links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 10px;
-  border: 1px solid var(--color-text);
+}
+
+.linkBadge {
+  display: inline-flex;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid var(--color-text, #444);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.linkBadge:hover,
+.linkBadge:focus-visible {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.badgeImage {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 @media (max-width: 768px) {
+  .albumInfo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  /* Порядок: название → картинка → ссылки (+ треки скрыты) */
+  .albumBody {
+    display: contents;   /* даём order-ам работать по детям */
+}
+
+  .albumName {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  .albumImage {
+    order: 2;
+    width: 100%;
+  }
+
+  .links {
+    order: 3;
+    margin: 10px 0 0;
+    justify-content: center;
+  }
+
   .albumList {
     display: none;
   }
 }
+
