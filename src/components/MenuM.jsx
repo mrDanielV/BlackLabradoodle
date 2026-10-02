@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './MenuM.module.css';
 
 const navItems = [
-  { to: '/', label: 'About Bl-Lab', end: true },
+  { to: '/', label: 'Home', end: true },
   { to: '/members', label: 'Team band' },
   { to: '/music', label: 'Music' },
   { to: '/contacts', label: 'Contracts' },

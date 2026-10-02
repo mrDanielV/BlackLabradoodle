@@ -25,6 +25,18 @@
   color: var(--color-gold);
 }
 
+.homelogo {
+    width: 124px;
+    height: 30px;
+    background: url(/bl_icon_full.png) no-repeat left;
+    background-size: contain;
+    transition: background-image 0.2s ease;
+}
+.homelogo:hover,
+.homelogo:focus-visible {
+   background-image: url(/bl_icon_full_hover_1.png);
+}
+
 .menuMobile {
   color: var(--color-text);
   background: var(--color-surface);

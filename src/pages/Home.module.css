@@ -5,6 +5,10 @@
   gap: 24px;
 }
 
+.mainCnt {
+  text-align: center; 
+}
+
 .image {
   flex-shrink: 0;
   width: 350px;
@@ -12,6 +16,12 @@
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.image1 {
+  max-width: 100%;
+  height: auto;
+  max-height: 800px;
 }
 
 .text {
@@ -28,5 +38,11 @@
   .image {
     align-self: center;
     width: 100%;
+  }
+
+  .image1 {
+    align-self: center;
+    width: 100%;
+    max-height: none;
   }
 }

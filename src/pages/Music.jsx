@@ -36,19 +36,6 @@ export function Music() {
       {albums.map(({album}) => (
         <Album data={album}></Album>
       ))}
-
-      { /*<div className={styles.album}>
-        <img src={liteSmile} alt="Lite Smile" className={styles.albumImage} />
-
-        <div className={styles.albumInfo}>
-          <h2 className={styles.albumName}>Lite Smile</h2>
-          <div className={styles.albumList}>
-            {liteSmileTracks.map(({ name }) => (
-              <p>&bull; {name}</p>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 import { MenuM } from './MenuM';
 
 const navItems = [
-  { to: '/', label: 'About Bl-Lab', end: true },
+  { to: '/', label: 'Home', end: true },
   { to: '/members', label: 'Team band' },
   { to: '/music', label: 'Music' },
   { to: '/contacts', label: 'Contracts' },
@@ -17,7 +17,7 @@ export function Header() {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo} aria-label="Home">
-        <svg
+        { /*<svg
           width="28"
           height="28"
           viewBox="0 0 24 24"
@@ -30,7 +30,8 @@ export function Header() {
         >
           <path d="M3 10.5 12 3l9 7.5" />
           <path d="M5 9.5V21h14V9.5" />
-        </svg>
+        </svg> */ }
+          <div className={styles.homelogo}></div>
       </NavLink>
 
       <button type="button" className={`${styles.menuMobile} ${styles.logo}`}
