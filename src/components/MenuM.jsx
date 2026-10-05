@@ -2,12 +2,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './MenuM.module.css';
 
-const navItems = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/members', label: 'Team band' },
-  { to: '/music', label: 'Music' },
-  { to: '/contacts', label: 'Contracts' },
-];
+import { navItems } from '../data/navItems';
 
 export function MenuM({ isOpen, onClose }) {
   useEffect(() => {

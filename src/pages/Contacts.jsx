@@ -1,10 +1,16 @@
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styles from './Contacts.module.css';
 
 
 export function Contacts() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <h1 className="title">Contacts</h1>
       <NavLink to="/" className={styles.logo} aria-label="Home">
             <svg
@@ -22,7 +28,7 @@ export function Contacts() {
             </svg>
             <span>&nbsp;</span>Black_Labradoodle
       </NavLink>
-    </div>
+    </motion.div>
   );
 
 

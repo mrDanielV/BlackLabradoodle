@@ -1,7 +1,9 @@
 import styles from './Album.module.css';
 
 export function Album({ data }) {
-  return (
+    const { name = 'Без названия', img = '', tracks = [] } = data;
+
+    return (
         <div className={styles.album}>
             <div className={styles.albumInfo}>
                 <img src={data.img} alt={styles.albumName} className={styles.albumImage} />
@@ -9,7 +11,7 @@ export function Album({ data }) {
                     <h2 className={styles.albumName}>{data.name}</h2>
 
                     <div className={styles.albumList}>
-                        {data.tracks.map(({ name }) => (
+                        {data.tracks && data.tracks.map(({ name }) => (
                             <p key={name}>&bull; {name}</p>
                         ))}
                         </div>

@@ -2,14 +2,9 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './Header.module.css';
 
-import { MenuM } from './MenuM';
+import { navItems } from '../data/navItems';
 
-const navItems = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/members', label: 'Team band' },
-  { to: '/music', label: 'Music' },
-  { to: '/contacts', label: 'Contracts' },
-];
+import { MenuM } from './MenuM';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);

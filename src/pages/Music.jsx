@@ -1,8 +1,7 @@
-//import { useState } from 'react';
+import { motion } from 'framer-motion';
 import liteSmile from '../../images/liteSmile.jpg';
 import darkAngel from '../../images/darkAngel.jpg';
 import { Album } from '../components/Album';
-//import styles from './Music.module.css';
 
 const liteSmileTracks = [
   {name: 'Lite Smile'},
@@ -30,12 +29,17 @@ const albums = [
 
 export function Music() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <h1 className="title">Music</h1>
 
       {albums.map(({album}) => (
         <Album data={album}></Album>
       ))}
-    </div>
+    </motion.div>
   );
 }

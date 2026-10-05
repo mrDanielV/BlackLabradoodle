@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import greenLead1 from '../../images/greenLead1.jpg';
@@ -15,13 +16,18 @@ export function Members() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <h1 className="title">Team-band</h1>
 
       {team.map(({ name, role, img, text }) => (
         <Member name={name} role={role} img={img} text={text}></Member>
       ))}
 
-    </div>
+    </motion.div>
   );
 }
