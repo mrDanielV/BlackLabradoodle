@@ -25,7 +25,7 @@ export function Members() {
       <h1 className="title">Team-band</h1>
 
       {team.map(({ name, role, img, text }) => (
-        <Member name={name} role={role} img={img} text={text}></Member>
+        <Member key={name} name={name} role={role} img={img} text={text}></Member>
       ))}
 
     </motion.div>

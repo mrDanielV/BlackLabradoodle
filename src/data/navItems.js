@@ -4,3 +4,5 @@ export const navItems = [
   { to: '/music', label: 'Music' },
   { to: '/contacts', label: 'Contracts' },
 ];
+
+export const navLinks = ['/', '/members', '/music', '/contacts'];

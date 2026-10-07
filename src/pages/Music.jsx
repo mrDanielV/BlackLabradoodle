@@ -38,7 +38,7 @@ export function Music() {
       <h1 className="title">Music</h1>
 
       {albums.map(({album}) => (
-        <Album data={album}></Album>
+        <Album key={album.name} data={album}></Album>
       ))}
     </motion.div>
   );
