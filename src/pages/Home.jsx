@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import styles from './Home.module.css';
 
+import { mainText } from '../data/mainText';
+
 export function Home() {
+  
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -18,11 +22,7 @@ export function Home() {
 
         <br />
         <br />
-        <div className={styles.text}>
-          Привет, друг! Я Черный Лабрадудль и если ты просто любишь клёвую музыку, то нам с тобой по пути. 
-          Давай сыграем вместе, и пусть мир слегка содрогнётся от рокешника, 
-          а потом улыбнётся мягкому звуку классической струны. 
-          Открывай раздел <a href='./music' className='link'>Музыка</a> и погнали!</div>
+        <div className={styles.text}>{mainText}</div>
       </div>
     </motion.div>
   );
