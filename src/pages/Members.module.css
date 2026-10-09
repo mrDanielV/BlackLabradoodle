@@ -9,6 +9,7 @@
   width: 350px;
   max-width: 100%;
   height: auto;
+  border: 1px solid #4444445c;
   border-radius: 8px;
   object-fit: cover;
 }

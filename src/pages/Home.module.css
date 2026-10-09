@@ -26,6 +26,7 @@
 
 .text {
   flex: 1;
+  line-height: 22px;
 }
 
 @media (max-width: 768px) {
