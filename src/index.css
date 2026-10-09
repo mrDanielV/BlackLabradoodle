@@ -24,6 +24,21 @@ body {
   margin-top: var(--header-h);
 }
 
+.content::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(to right, var(--color-bg) 0%, transparent 70%),
+    url('/classik.jpg') no-repeat;
+  background-size: 50% auto;
+  background-position: right 80%;
+  opacity: 0.15;
+}
+
 .title {
   font-family: 'Inter';
   color: var(--color-gold);
@@ -64,5 +79,8 @@ body {
 @media (max-width: 768px) {
   .content {
     padding: 32px;
+  }
+  .content::before {
+    background: none;
   }
 }
