@@ -1,27 +1,30 @@
 .menuCnt {
   position: fixed;
-  top: var(--header-h, 65px);   /* старт под верхней панелью */
-  right: 0;                     /* привязка к правому краю */
-  width: 90%;                 /* «слайд-блок», не на всю ширину */
+  top: var(--header-h, 65px);
+  right: 0;
+  width: 90%;
   max-width: 85vw;
-  height: calc(100vh - var(--header-h, 65px)); /* до низа экрана */
-  background-color: #2e2716;
-  padding: 24px 20px;
+  height: calc(100vh - var(--header-h, 65px));
+  padding: 32px 24px;
   box-sizing: border-box;
   overflow-y: auto;
   z-index: 100;
 
-  /* выезд справа налево (из-за правого края) */
+  /*background: linear-gradient(160deg, #14120c 0%, #0b0a07 100%);*/
+  background-color: #29220cdb;
+  /*border-left: 2px solid var(--color-gold);*/
+  border-left: 2px solid  #d4af37b3;
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.6);
+
+  visibility: hidden;
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, visibility 0.3s ease;
 
-  /* объём: тень по «высоте» слева */
-  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.45);
-
-  border-radius: 12px 0 0 12px;  /* «парящий» левый край */
+  border-radius: 12px 0 0 12px;
 }
 
 .menuCnt.open {
+  visibility: visible;
   transform: translateX(0);
 }
 
@@ -33,22 +36,47 @@
 }
 
 .listCnt {
-  clear: both;
-  margin-top: 20px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .linkM {
+  position: relative;
   display: block;
-  padding: 12px;
-  margin-bottom: 5px;
-  color: var(--color-litegray);
-  cursor: pointer;
+  padding: 14px 4px 14px 16px;
   text-decoration: none;
-  font-size: 32px;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  letter-spacing: 0.02em;
+  color: var(--color-litegray);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.25s ease, padding-left 0.25s ease;
 }
-.linkM:hover {
+
+.linkM::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transform: translateY(-50%);
+  transition: width 0.25s ease;
+}
+
+.linkM:hover,
+.linkM:focus-visible {
   color: var(--color-gold);
+  padding-left: 24px;
+}
+
+.linkM:hover::before,
+.linkM:focus-visible::before {
+  width: 14px;
 }
 
 .close {

@@ -44,9 +44,9 @@
   background: none;
   border: none;
   color: var(--color-gold);
-  font-size: 1rem;
+  /*font-size: 1rem;*/
   line-height: 1;
-  padding: 4px 6px;
+  /*padding: 4px 6px;*/
   cursor: pointer;
 }
 
@@ -69,17 +69,11 @@
     margin-left: 16px;
   }
 
-  /* Порядок: заголовок → аннотация → картинка */
-  .memberImage {
-    order: 3;
-    width: 100%;
-    display: none;
-  }
-
   .memberInfo {
-    display: contents; /* снимаем обёртку, чтобы order работал по элементам */
+    display: contents;
   }
 
+  /* Порядок: заголовок → роль → картинка → read more → текст */
   .memberName {
     order: 1;
     margin-bottom: 0;
@@ -91,17 +85,24 @@
     margin-bottom: 0;
   }
 
-  /* Текст скрыт, показывается только по клику */
-  .memberText {
-    order: 4;
-    display: none;
-  }
-
-  .memberText.open, .memberImage.open {
-    display: block;
+  .memberImage {
+    order: 3;
+    width: 100%;
   }
 
   .memberToggle {
+    order: 4;
     display: inline-block;
+    align-self: flex-start;   /* чтобы кнопка не растягивалась на всю ширину */
+    /*margin-top: 4px;*/
+  }
+
+  .memberText {
+    order: 5;
+    display: none;
+  }
+
+  .memberText.open {
+    display: block;
   }
 }

@@ -1,6 +1,6 @@
 export const navItems = [
   { to: '/', label: 'Home', end: true },
-  { to: '/members', label: 'Team band' },
+  { to: '/members', label: 'The Band' },
   { to: '/music', label: 'Music' },
   { to: '/contacts', label: 'Contracts' },
 ];

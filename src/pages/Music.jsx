@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import liteSmile from '../../images/liteSmile.jpg';
 import darkAngel from '../../images/darkAngel.jpg';
 import { Album } from '../components/Album';
+import { FadeIn } from '../components/FadeIn';
 
 const liteSmileTracks = [
   {name: 'Lite Smile'},
@@ -37,8 +38,10 @@ export function Music() {
     >
       <h1 className="title">Music</h1>
 
-      {albums.map(({album}) => (
-        <Album key={album.name} data={album}></Album>
+      {albums.map(({album}, index) => (
+        <FadeIn key={album.name} delay={index * 0.1}>
+          <Album key={album.name} data={album}></Album>
+        </FadeIn>
       ))}
     </motion.div>
   );

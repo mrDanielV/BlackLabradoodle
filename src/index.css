@@ -13,13 +13,32 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
 }
 
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* main растягивается, забирая всё свободное место */
 .content {
+  flex: 1;
   padding: 32px 10%;
   margin-top: var(--header-h);
 }
@@ -32,11 +51,11 @@ body {
   pointer-events: none;
 
   background:
-    linear-gradient(to right, var(--color-bg) 0%, transparent 70%),
+    linear-gradient(to right, var(--color-bg) 0%, transparent 50%),
     url('/classik.jpg') no-repeat;
   background-size: 50% auto;
   background-position: right 80%;
-  opacity: 0.15;
+  opacity: 0.18;
 }
 
 .title {

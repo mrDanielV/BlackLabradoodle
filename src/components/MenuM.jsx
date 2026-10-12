@@ -6,10 +6,12 @@ import { navItems } from '../data/navItems';
 
 export function MenuM({ isOpen, onClose }) {
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+    return () => document.body.classList.remove('no-scroll');
   }, [isOpen]);
 
   return (
