@@ -12,8 +12,13 @@ export function Contacts() {
       transition={{ duration: 0.3 }}
     >
       <h1 className="title">Contacts</h1>
-      <NavLink to="/" className={styles.logo} aria-label="Home">
-            <svg
+
+      <a className={styles.logo}
+        href="https://t.me/black_labradoodle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
               width="28"
               height="28"
               viewBox="0 0 24 24"
@@ -27,7 +32,8 @@ export function Contacts() {
               <path d="M21.5 3.5 2.5 11l5 2 2 6 3-4 5 3.5z" />
             </svg>
             <span>&nbsp;</span>Black_Labradoodle
-      </NavLink>
+      </a>
+      
     </motion.div>
   );
 
