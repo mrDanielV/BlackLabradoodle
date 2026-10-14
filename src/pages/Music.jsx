@@ -20,12 +20,12 @@ const darkAngelTracks = [
 ];
 
 const albums = [
-  {album: {
+  {
     name: 'Lite Smile', img: liteSmile, tracks: liteSmileTracks
-  }},
-  {album: {
+  },
+  {
     name: 'Dark Angel (single)', img: darkAngel, tracks: darkAngelTracks
-  }}
+  }
 ];
 
 export function Music() {
@@ -38,9 +38,9 @@ export function Music() {
     >
       <h1 className="title">Music</h1>
 
-      {albums.map(({album}, index) => (
+      {albums.map((album, index) => (
         <FadeIn key={album.name} delay={index * 0.1}>
-          <Album key={album.name} data={album}></Album>
+          <Album data={album}></Album>
         </FadeIn>
       ))}
     </motion.div>
