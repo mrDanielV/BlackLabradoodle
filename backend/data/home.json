@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "data": [
+    {
+      "type": "text",
+      "text": "Hey, friend! I'm Black Labradoodle, and if you just love cool music, we're on the same wavelength. Grab a guitar, hit the strings, let your soul's free and pure impulses take flight! Play, play, play without stopping, filling the world with pure beauty, emotion, a smile, bright sadness, and gentle sorrow. Play with me and live through music!"
+    },
+    {
+      "type": "endblock"
+    }, 
+    {
+      "type": "text",
+      "text": "I'm Black Labradoodle — an instrumental guitar music project where there's no room for conventional genre labels. I happily blend classical guitar with rock, spicing it up with a cheeky ukulele, a singing violin, and a pumped-up bass."
+    },
+    {
+      "type": "link",
+      "text": "And I just play!",
+      "to": "/music"
+    },
+    {
+      "type": "endblock"
+    },
+    {
+      "type": "text",
+      "text": "I'm Black Labradoodle — and behind this name are not people with their boring names and faces, but a whole gang of those who truly play music. You can meet them in the"
+    },
+    {
+      "type": "link",
+      "text": "The Band",
+      "to": "/members"
+    },
+    {
+      "type": "text",
+      "text": "section."
+    }
+  ]
+}

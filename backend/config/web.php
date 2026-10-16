@@ -47,14 +47,15 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                // API-маршруты
+                'GET api/home' => 'api/home',
+                'GET api/tracks' => 'api/tracks',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
