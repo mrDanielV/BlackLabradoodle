@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "data": [
+    {
+      "name": "Lite Smile",
+      "img": "liteSmile.jpg",
+      "tracks": [
+        { "name": "Lite Smile"},
+        { "name": "Sarcasm"},
+        { "name": "Autumn rondo"},
+        { "name": "Just Summer"},
+        { "name": "Winter's Grin"},
+        { "name": "Hallelujah"},
+        { "name": "Romance Anonimo"},
+        { "name": "The House of The Rising Sun"}
+      ]
+    },
+    {
+      "name": "Dark Angel (single)",
+      "img": "darkAngel.jpg",
+      "tracks": [
+        { "name": "Dark Angel" }
+      ]
+    }
+  ]
+}

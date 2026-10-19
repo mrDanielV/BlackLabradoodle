@@ -51,11 +51,47 @@ class ApiController extends Controller
             Yii::$app->response->data = [
                 'success' => false,
                 'error' => 'Unauthorized',
-                //'debug_token' => $token,  // временно
+                //'debug_token' => $token,
             ];
             Yii::$app->response->send();
             Yii::$app->end();
         }
+    }
+
+    /**
+     * Чтение файла из app/data/
+     */
+    private function getJSONFileContent($name = '') {
+        // Проверка имени файла
+        if (!$name) {
+            return $this->error('File name is required');
+        }
+
+        // Получаем путь
+        $file = Yii::getAlias('@app/data/' . $name);
+
+        // Проверка существования файла
+        if (!file_exists($file)) {
+            return $this->error("File not found: {$name}");
+        }
+
+        // Чтение содержимого
+        $content = file_get_contents($file);
+
+        //  Проверка на пустоту
+        if ($content === false || trim($content) === '') {
+            return $this->error("File is empty: {$name}");
+        }
+
+        // Парсинг JSON
+        $data = json_decode($content, true);
+
+        // Проверка на ошибку JSON
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return $this->error("Invalid JSON in file: {$name}");
+        }
+
+        return $data;
     }
 
     /**
@@ -64,8 +100,7 @@ class ApiController extends Controller
     public function actionHome()
     {
         $this->checkAuth();
-        $file = Yii::getAlias('@app/data/home.json');
-        return json_decode(file_get_contents($file), true);
+        return $this->getJSONFileContent('home.json');
     }
 
     /**
@@ -74,14 +109,14 @@ class ApiController extends Controller
     public function actionTracks()
     {
         $this->checkAuth();
+        return $this->getJSONFileContent('music.json');
+    }
 
-        // Пока заглушка
+    private function error ($msg = '') {
+        //Yii::$app->response->statusCode = 404;
         return [
-            'success' => true,
-            'data' => [
-                ['name' => 'Lite Smile'],
-                ['name' => 'Sarcasm'],
-            ],
+            'success' => false,
+            'error' => $msg
         ];
     }
 }
