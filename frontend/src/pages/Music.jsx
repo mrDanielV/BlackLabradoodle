@@ -1,34 +1,17 @@
 import { motion } from 'framer-motion';
-import liteSmile from '../../images/liteSmile.jpg';
-import darkAngel from '../../images/darkAngel.jpg';
+import { useApi } from '../hooks/useApi';
 import { Album } from '../components/Album';
 import { FadeIn } from '../components/FadeIn';
-
-const liteSmileTracks = [
-  {name: 'Lite Smile'},
-  {name: 'Sarcasm'},
-  {name: 'Autumn rondo'},
-  {name: 'Just Summer'},
-  {name: "Winter's Grin"},
-  {name: 'Hallelujah'},
-  {name: 'Romance Anonimo'},
-  {name: 'The House of The Rising Sun'}
-];
-
-const darkAngelTracks = [
-  {name: 'Dark Angel'}
-];
-
-const albums = [
-  {
-    name: 'Lite Smile', img: liteSmile, tracks: liteSmileTracks
-  },
-  {
-    name: 'Dark Angel (single)', img: darkAngel, tracks: darkAngelTracks
-  }
-];
+import { Waiter } from '../components/Waiter';
 
 export function Music() {
+    const { data, loading, error } = useApi('/api/tracks');
+  
+    if (loading) return <Waiter />;
+    if (error) return <p>Error: {error}</p>;
+    if (!data) return null;
+
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -38,7 +21,7 @@ export function Music() {
     >
       <h1 className="title">Music</h1>
 
-      {albums.map((album, index) => (
+      {data.map((album, index) => (
         <FadeIn key={album.name} delay={index * 0.1}>
           <Album data={album}></Album>
         </FadeIn>
